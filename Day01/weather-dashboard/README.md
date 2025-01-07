@@ -1,87 +1,58 @@
-Day 1 - 30 Day DevOps Challenge by Cozy Cloud
+# Day 1 - 30 Day DevOps Challenge by Cozy Cloud
 
-Weather Dashboard
+## Weather Dashboard
 
-Warm-up to the Month-Long DevOps Challenge
+This application fetches weather app data from the OpenWeather API and saves it to AWS S3 Bucket. The application. The application is containerized using Docker.
 
-Technologies Used
+## Prerequisites
+- python installed on the system
+- vscode
+- AWS account with access keys
+- OpenWeather API key
 
-Python
+## Setup
 
-AWS S3
+1. Clone this repository:
+    ```sh
+    git clone https://github.com/nithish-sakthivel-1112/30-days-DevOps-Challenge.git
+    cd weather-dashboard
+    ```
 
-Objective
+2. Create a [.env]file in the root directory with the following content:
 
-Connect to an S3 bucket via Python and store JSON files in it.
+    ```properties
+      OPENWEATHER_API_KEY=your_openweather_api_key
+      AWS_BUCKET_NAME=weather-dashboard-${RANDOM}
+      # AWS CREDENTIALS
+      AWS_ACCESS_KEY_ID=your_aws_secret_key_id
+      AWS_SECRET_ACCESS_KEY=your_aws-secret_access_key
+      AWS_DEFAULT_REGION=your_aws_default_region
+    ```
 
-Fetch weather details using a basic API GET call from the OpenWeather API.
 
-Flow
+## Usage 
 
-1. API Provider
+The application will fetch weather data from the cities added into the json file at **/data/cities.json** file. The weather data will be saved to the specified AWS S3 bucket.
 
-Create an account on OpenWeather.
+## AWS Configuration
 
-Generate an API key from the OpenWeather API dashboard.
+The application uses the AWS CLI to interact with the S3. Ensure your AWS credentials are correctly set in the **.env** file.
 
-2. Project Structure
+## Outputs
+Execute python3 src/weather-dashboard.py
+![image](https://github.com/user-attachments/assets/5d5cd88c-464f-4359-88c3-fd73b9372f96)
 
-weather-dashboard/
-├── src/
-│   ├── __init__.py
-│   └── weather_dashboard.py
-├── .env
-├── .gitignore
-├── requirements.txt
-└── README.md
+![image](https://github.com/user-attachments/assets/6c37a3a8-22a2-4537-ae7d-7994999cc0ca)
 
-3. GitIgnore
 
-Use a .gitignore file to ignore sensitive files and unnecessary code artifacts. Examples:
+## Resources
+- [OpenWeather API Documentation](https://openweathermap.org/api): Learn more about the OpenWeather API.
+- [AWS S3 Documentation](https://docs.aws.amazon.com/s3/index.html): Comprehensive guide to using AWS S3.
+- [AWS CLI Configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html): Guide to configuring the AWS CLI.
 
-Environment variable files (.env).
+## License 
 
-Python bytecode files (__pycache__/).
+This project is licensed under the MIT License.
 
-4. Environment File
 
-Create a .env file in your project directory to store sensitive information securely. Example:
-
-OPENWEATHER_API_KEY=your_openweather_api_key
-AWS_BUCKET_NAME=weather-dashboard-unique
-AWS_ACCESS_KEY_ID=your_aws_access_key_id
-AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-AWS_DEFAULT_REGION=your_aws_default_region
-
-5. Code
-
-The Python code for the weather dashboard handles API calls, S3 bucket interactions, and JSON storage.
-
-See the source code for implementation details.
-
-How to Run
-
-1. Running Python File
-
-Run the Python script directly:
-
-python src/weather_dashboard.py
-
-Resources
-
-OpenWeather API Documentation: Learn more about the OpenWeather API.
-
-AWS S3 Documentation: Comprehensive guide to using AWS S3.
-
-AWS CLI Configuration: Guide to configuring the AWS CLI.
-
-Additional Notes
-
-Ensure your AWS credentials are properly configured before running the project.
-
-Test API connectivity and bucket access permissions to avoid runtime errors.
-
-Use logging in the Python script to replace print statements for better debugging and log management.
-
-Happy coding and learning DevOps!
-
+Thanks to <a id='ShaeInTheCloud' href="https://github.com/ShaeInTheCloud">ShaeInTheCloud</a>

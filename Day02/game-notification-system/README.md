@@ -27,7 +27,7 @@
 - Open the AWS Management Console.
 - Navigate to the **SNS** service.
 - Click **Create Topic** and select **Standard** as the topic type.
-- Name the topic (e.g., `gd_topic`) and note the ARN.
+- Name the topic and note the ARN.
 - Click **Create Topic**.
 
 ### 2. Add Subscriptions to the SNS Topic
@@ -49,7 +49,7 @@
 - Replace `REGION` and `ACCOUNT_ID` with your AWS region and account ID.
 - Click **Next: Tags** (you can skip adding tags).
 - Click **Next: Review**.
-- Enter a name for the policy (e.g., `gd_sns_policy`).
+- Enter a name for the policy.
 - Review and click **Create Policy**.
 
 ### 4. Create an IAM Role for Lambda
@@ -58,11 +58,11 @@
 - Click **Roles** → **Create Role**.
 - Select **AWS Service** and choose **Lambda**.
 - Attach the following policies:
-  - **SNS Publish Policy** (e.g., `gd_sns_policy` from the previous step).
+  - **SNS Publish Policy** 
   - **Lambda Basic Execution Role** (AWS managed policy).
 - Click **Next: Tags** (you can skip adding tags).
 - Click **Next: Review**.
-- Enter a name for the role (e.g., `gd_role`).
+- Enter a name for the role 
 - Review and click **Create Role**.
 - Copy and save the ARN of the role for use in the Lambda function.
 
@@ -71,9 +71,9 @@
 - Open the **Lambda** service in the AWS Management Console.
 - Click **Create Function**.
 - Select **Author from Scratch**.
-- Enter a function name (e.g., `gd_notifications`).
+- Enter a function name.
 - Choose **Python 3.x** as the runtime.
-- Assign the IAM role (`gd_role`) to the function.
+- Assign the IAM role  to the function.
 - Under the **Function Code** section:
   - Copy the content of the `src/gd_notifications.py` file from the repository.
   - Paste it into the inline code editor.
@@ -88,7 +88,7 @@
 - Go to **Rules** → **Create Rule**.
 - Select **Event Source: Schedule**.
 - Set the cron schedule for when you want updates (e.g., hourly).
-- Under **Targets**, select the Lambda function (`gd_notifications`) and save the rule.
+- Under **Targets**, select the Lambda function and save the rule.
 
 ### 7. Test the System
 

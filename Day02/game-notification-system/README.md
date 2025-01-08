@@ -2,7 +2,7 @@
 
 ## Problem Statement:Create an architecture using AWS to send game update notifications to subscribers.
 
-![Image](your-image-url-here)
+![Image](Overview.jpeg)
 
 ## Used Tools:
 

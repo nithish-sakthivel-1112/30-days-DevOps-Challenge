@@ -1,8 +1,6 @@
 # Project: Game Notification System
 
-**## Problem Statement:**
-
-Create an architecture using AWS to send game update notifications to subscribers.
+## Problem Statement:Create an architecture using AWS to send game update notifications to subscribers.
 
 ![Image](your-image-url-here)
 
